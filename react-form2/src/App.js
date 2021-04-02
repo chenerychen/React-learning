@@ -52,10 +52,7 @@ class App extends Component {
           dietRestrictions : {
             ...prevState.dietRestrictions, 
             [name] : checked} }
-        })
-       
-      : this.setState({[name] : value })
-     
+        }): this.setState({[name] : value })
   }
     
     render() {
@@ -162,7 +159,9 @@ class App extends Component {
                 <p>Your destination: {this.state.destination/* Destination here */}</p>
                 <p>
                     Your dietary restrictions: 
-                    {this.state.dietRestrictions/* Dietary restrictions here, comma separated */}
+                    Vegan : {this.state.dietRestrictions.isVegan ? "Yes" : 'No'}.
+                    <br/> 
+                    Kosher : {this.state.dietRestrictions.isKosher ? "Yes" : 'No'}
                 </p>
             </main>
         )
